@@ -39,7 +39,7 @@ const Header = () => {
           <li>
             <Link
               className="hover:underline underline-offset-8 decoration-hover"
-              href={"/test"}
+              href={"/contact"}
             >
               Contact
             </Link>
