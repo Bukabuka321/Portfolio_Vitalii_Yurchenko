@@ -1,64 +1,75 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useState } from "react";
+import axios from "axios";
 
 const Contact = () => {
+  const [firstname, setFirstname] = useState<string>();
+  const [lastname, setLastname] = useState<string>();
+  const [number, setNumber] = useState<string>();
+  const [email, setEmail] = useState<string>();
+  const [message, setMessage] = useState<string>();
   const [submitted, setSubmitted] = useState(false);
-  const handleSubmit = () => {
-    setTimeout(() => {
-      setSubmitted(true);
-    }, 100);
-  };
 
-  if (submitted) {
-    return (
-      <>
-        <div className="text-2xl">Thank you!</div>
-        <div className="text-md">We'll be in touch soon.</div>
-      </>
-    );
-  }
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    axios
+      .post("http://localhost:5050/api/messages", {
+        firstname,
+        lastname,
+        number,
+        email,
+        message,
+      })
+      .then((response) => response.data);
+  };
   return (
     <div className="w-screen h-screen">
       <div>
-        <form
-          //   action={FORM_ENDPOINT}
-          //   onSubmit={handleSubmit}
-          method="POST"
-          target="_blank"
-        >
+        <form onSubmit={handleSubmit}>
           <div className="mb-3 pt-0">
             <input
               type="text"
-              placeholder="Your name"
-              name="name"
-              className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
+              placeholder="Your first name"
+              className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white  rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
               required
+              value={firstname}
+              onChange={(e) => setFirstname(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="Your lastname"
+              className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
+              required
+              value={lastname}
+              onChange={(e) => setLastname(e.target.value)}
             />
           </div>
           <div className="mb-3 pt-0">
             <input
               type="email"
               placeholder="Email"
-              name="email"
               className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
               required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="mb-3 pt-0">
             <input
               type="number"
               placeholder="Phone number"
-              name="number"
               className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
-              required
+              value={number}
+              onChange={(e) => setNumber(e.target.value)}
             />
           </div>
           <div className="mb-3 pt-0">
             <textarea
               placeholder="Your message"
-              name="message"
               className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white  rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
               required
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
             />
           </div>
           <div className="mb-3 pt-0">
