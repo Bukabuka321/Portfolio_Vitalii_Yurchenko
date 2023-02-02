@@ -14,6 +14,7 @@ module.exports = {
         hover: "rgba(0, 131, 255, 0.7);",
         border: "rgba(0, 131, 255, 0.38)",
         dark_back: "rgba(18, 0, 18, 0.26)",
+        inputBorder: "rgba(217, 217, 217, 0.1)",
       },
     },
   },

@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useState } from "react";
 import axios from "axios";
+import styles from "../../styles/Border.module.css";
 
 const Contact = () => {
   const [firstname, setFirstname] = useState<string>();
@@ -27,71 +28,94 @@ const Contact = () => {
   };
   if (submitted) {
     return (
-      <>
+      <div className="h-screen w-sreen">
         <div className="text-2xl">Thank you!</div>
         <div className="text-md">We'll be in touch soon.</div>
-      </>
+      </div>
     );
   }
   return (
-    <div className="w-screen h-screen">
-      <div>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-3 pt-0">
+    <div className=" flex flex-col items-center">
+      <div className={styles.inputContainer}>
+        <h1 className="text-4xl font-semibold text-[#0083FF] my-10">
+          Contact me!
+        </h1>
+        <form
+          onSubmit={handleSubmit}
+          className="w-full flex flex-col items-center gap-y-8"
+        >
+          <div className="w-3/6 flex justify-start">
+            <h2 className="text-2xl font-semibold text-[#0083FF] mb-2 text-left">
+              Your name:
+            </h2>
+          </div>
+          <div className="w-3/6 mb-3 pt-0 flex justify-between gap-x-28">
             <input
               type="text"
-              placeholder="Your first name"
-              className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white  rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
+              placeholder="Firstname"
+              className="w-52 h-11 bg-inputBorder border border-[#0083FF] rounded-xl px-1"
               required
               value={firstname}
               onChange={(e) => setFirstname(e.target.value)}
             />
             <input
               type="text"
-              placeholder="Your lastname"
-              className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
+              placeholder="Lastname"
+              className="w-52 h-11 bg-inputBorder border border-[#0083FF] rounded-xl px-1"
               required
               value={lastname}
               onChange={(e) => setLastname(e.target.value)}
             />
           </div>
-          <div className="mb-3 pt-0">
+          <div className="w-3/6 flex justify-start">
+            <h2 className="text-2xl font-semibold text-[#0083FF] mb-2 text-left">
+              Your email:
+            </h2>
+          </div>
+          <div className="w-3/6 mb-3 pt-0">
             <input
               type="email"
               placeholder="Email"
-              className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
+              className="w-full h-11 bg-inputBorder border border-[#0083FF] rounded-xl px-1"
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <div className="mb-3 pt-0">
+          <div className="w-3/6 flex justify-start">
+            <h2 className="text-2xl font-semibold text-[#0083FF] mb-2 text-left">
+              Your phone number:
+            </h2>
+          </div>
+          <div className="w-3/6 mb-3 pt-0">
             <input
-              type="number"
+              type="text"
               placeholder="Phone number"
-              className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
               value={number}
+              className="w-full h-11 bg-inputBorder border border-[#0083FF] rounded-xl px-1"
               onChange={(e) => setNumber(e.target.value)}
             />
           </div>
-          <div className="mb-3 pt-0">
+          <div className="w-3/6 flex justify-start">
+            <h2 className="text-2xl font-semibold text-[#0083FF] mb-2 text-left">
+              Your message:
+            </h2>
+          </div>
+          <div className="w-3/6 mb-3 pt-0">
             <textarea
+              className="w-full h-24 bg-inputBorder border border-[#0083FF] rounded-xl px-1 py-2"
               placeholder="Your message"
-              className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white  rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
               required
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             />
           </div>
-          <div className="mb-3 pt-0">
-            <button
-              className="bg-blue-500 text-white active:bg-blue-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-              type="submit"
-            >
-              Send a message
-            </button>
-          </div>
         </form>
+      </div>
+      <div className=" w-1/6 mb-3 pt-0">
+        <button className="w-full py-5 bg-[#0083FF] rounded-xl" type="submit">
+          <p className="text-2xl"> Send a message</p>
+        </button>
       </div>
     </div>
   );
