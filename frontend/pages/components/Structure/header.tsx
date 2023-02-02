@@ -1,5 +1,5 @@
 import Link from "next/link";
-import BurgerMenu from "./BurgerMenu";
+import BurgerMenu from "../BurgerMenu/BurgerMenu";
 
 import { Oswald } from "@next/font/google";
 const oswald = Oswald({ subsets: ["latin"] });
