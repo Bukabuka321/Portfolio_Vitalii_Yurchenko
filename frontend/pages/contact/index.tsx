@@ -20,8 +20,19 @@ const Contact = () => {
         email,
         message,
       })
-      .then((response) => response.data);
+      .then((response) => response.data)
+      .then(() => {
+        setSubmitted(true);
+      });
   };
+  if (submitted) {
+    return (
+      <>
+        <div className="text-2xl">Thank you!</div>
+        <div className="text-md">We'll be in touch soon.</div>
+      </>
+    );
+  }
   return (
     <div className="w-screen h-screen">
       <div>
