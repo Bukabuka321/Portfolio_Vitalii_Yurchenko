@@ -12,6 +12,7 @@ module.exports = {
     extend: {
       colors: {
         hover: "rgba(0, 131, 255, 0.7);",
+        border: "rgba(0, 131, 255, 0.38)",
       },
     },
   },

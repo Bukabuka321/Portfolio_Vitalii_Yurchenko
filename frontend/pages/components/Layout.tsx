@@ -9,7 +9,7 @@ interface Props {
 const Layout = ({ children, ...props }: Props) => {
   return (
     //Set for all pages height and width to full screen
-    <div className="h-screen w-screen">
+    <div className="h-full w-full">
       <Header />
       <main {...props}>{children}</main>
       <Footer />

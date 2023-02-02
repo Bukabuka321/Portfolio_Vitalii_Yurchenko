@@ -9,7 +9,7 @@ import {
 
 const footer = () => {
   return (
-    <div className="flex justify-center items-center w-full top-full sticky">
+    <div className="flex justify-center items-center w-full top-[100vh]">
       <ul className="list-none flex items-center my-5">
         <li className="mx-2 py-2">
           <Link href={"/test"}>
