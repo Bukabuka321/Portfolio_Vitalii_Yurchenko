@@ -1,10 +1,11 @@
 import { TbCircle1 } from "react-icons/tb";
 import styles from "../../styles/Border.module.css";
+import style from "../../styles/Back.module.css";
 
 const About = () => {
   return (
-    <div>
-      <div className="w-full flex justify-end my-16">
+    <div className={style.secondContainer}>
+      <div className="w-screen flex justify-end mb-16">
         <div className="flex items-center mr-16">
           <TbCircle1 className="mr-2 w-24 h-24" />
           <h1 className="text-5xl font-bold">Let me tell you my story!</h1>
