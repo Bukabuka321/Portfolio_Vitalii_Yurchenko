@@ -5,13 +5,15 @@ import style from "../../styles/Back.module.css";
 const About = () => {
   return (
     <div className={style.secondContainer}>
-      <div className="w-screen flex justify-end mb-16">
-        <div className="flex items-center mr-16">
+      <div className="flex justify-start lg:w-screen lg:justify-end mb-16 ">
+        <div className="flex flex-col items-start ml-3 lg:flex lg:flex-row lg:items-center lg:mr-16">
           <TbCircle1 className="mr-2 w-24 h-24" />
-          <h1 className="text-5xl font-bold">Let me tell you my story!</h1>
+          <h1 className="text-4xl lg:text-5xl font-bold">
+            Let me tell you my story!
+          </h1>
         </div>
       </div>
-      <div className="w-full">
+      <div className="w-full flex justify-center lg:justify-start">
         <div className={styles.container}>
           <h2 className="text-2xl font-medium">Who am I?</h2>
           <p className="font-light font-sans">

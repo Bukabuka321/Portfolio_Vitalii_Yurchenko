@@ -32,7 +32,9 @@ const BoxTech = () => {
     <>
       {techs.map((tech) => (
         <div key={tech.id} className={styles.container}>
-          <h2 className="text-2xl font-medium text-[#1976D2]">{tech.name}</h2>
+          <h2 className="text-2xl font-medium text-[#1976D2] mb-2">
+            {tech.name}
+          </h2>
           <p className="font-light font-sans text-[#E9DDDD]">
             {tech.description}
           </p>

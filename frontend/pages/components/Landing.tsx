@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import Link from "next/link";
 import styles from "../../styles/Back.module.css";
+import Socials from "./Socials";
 
 const Landing = () => {
   return (
@@ -11,11 +12,12 @@ const Landing = () => {
           <br /> I'm Vitalii,
           <br /> Full Stack Web Developer
         </h1>
-        <button className="px-24 py-3 border border-white rounded-xl sm:mx-5 lg:mx-0">
+        <button className="px-20 lg:px-24 py-3 border border-white rounded-xl sm:mx-5 lg:mx-0">
           <Link href={"/contact"} className="font-light text-3xl">
             Contact me!
           </Link>
         </button>
+        <Socials />
       </div>
     </div>
   );

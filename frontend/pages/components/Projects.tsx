@@ -3,16 +3,18 @@ import ProjectItem from "./ProjectsItem";
 
 const Projects = () => {
   return (
-    <div>
-      <div className="w-full flex justify-start my-16">
-        <div className="flex items-center ml-16">
+    <div className="mb-6">
+      <div className="w-full flex justify-start lg:justify-end my-16">
+        <div className="flex flex-col ml-3 lg:flex-row lg:items-center lg:mr-16">
           <TbCircle3 className="mr-2 w-24 h-24" />
-          <h1 className="text-5xl font-bold">Checkout my projects!</h1>
+          <h1 className="text-4xl lg:text-5xl font-bold">
+            Checkout my projects!
+          </h1>
         </div>
       </div>
       <div className="w-full ">
-        <ul className=" w-full flex flex-col ">
-          <li className="w-3/6  self-end text-right">
+        <ul className=" w-full flex flex-col gap-5">
+          <li className="w-full lg:w-3/6  lg:self-end lg:text-right">
             <ProjectItem
               name={"The Wilder's book"}
               description={
@@ -20,7 +22,7 @@ const Projects = () => {
               }
             />
           </li>
-          <li className="w-3/6">
+          <li className="w-full lg:w-3/6">
             <ProjectItem
               name={"The Wilder's book"}
               description={
@@ -28,7 +30,7 @@ const Projects = () => {
               }
             />
           </li>
-          <li className="w-3/6  self-end text-right">
+          <li className="w-full lg:w-3/6 lg:self-end lg:text-right">
             <ProjectItem
               name={"The Wilder's book"}
               description={
