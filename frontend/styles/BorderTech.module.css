@@ -16,7 +16,7 @@
 @media (min-width: 1024px) {
     .container {
         width: 33%;
-        margin: 0 6rem 0 6rem ;
-        padding: 1.25rem 0.5rem 1.25rem 0.5rem;
+        margin: 0 6rem  6rem ;
+        padding: 1.25rem 2rem 1.25rem 2rem;
     }
 }

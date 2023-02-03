@@ -3,25 +3,25 @@ import styles from "../../styles/BorderTech.module.css";
 const techs = [
   {
     id: 1,
-    name: "NEXT.js",
+    name: "Responsive design",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Et similique quas ipsa odit omnis quam possimus, voluptates aliquam, placeat pariatur, quos dolore. Numquam eum sit asperiores pariatur dolores accusantium totam?",
   },
   {
     id: 2,
-    name: "NEXT.js",
+    name: "Frameworks",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Et similique quas ipsa odit omnis quam possimus, voluptates aliquam, placeat pariatur, quos dolore. Numquam eum sit asperiores pariatur dolores accusantium totam?",
   },
   {
     id: 3,
-    name: "NEXT.js",
+    name: "Soft skills",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Et similique quas ipsa odit omnis quam possimus, voluptates aliquam, placeat pariatur, quos dolore. Numquam eum sit asperiores pariatur dolores accusantium totam?",
   },
   {
     id: 4,
-    name: "NEXT.js",
+    name: "Programming laguages",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Et similique quas ipsa odit omnis quam possimus, voluptates aliquam, placeat pariatur, quos dolore. Numquam eum sit asperiores pariatur dolores accusantium totam?",
   },

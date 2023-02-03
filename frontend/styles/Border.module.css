@@ -1,6 +1,6 @@
 .container {
     width: 80%;
-    padding: 1.5rem 1rem 1.5rem 1rem;
+    padding: 1.5rem 2rem 1.5rem 2rem;
     border-width: 1px;
     border-style: solid;
     border-radius: 14px;
@@ -16,7 +16,8 @@
     .container {
         width: 33%;
         margin-left: 5rem;
-        padding: 1.25rem 0.5rem 1.25rem 0.5rem;
+        margin-right: 5rem;
+        padding: 1.25rem 2rem 1.25rem 2rem;
     }
 }
 

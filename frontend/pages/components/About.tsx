@@ -13,9 +13,18 @@ const About = () => {
           </h1>
         </div>
       </div>
-      <div className="w-full flex justify-center lg:justify-start">
+      <div className="w-full flex flex-col items-center gap-y-9 lg:flex-row lg:justify-between lg:px-6">
         <div className={styles.container}>
-          <h2 className="text-2xl font-medium">Who am I?</h2>
+          <h2 className="text-2xl font-medium mb-2">Who am I?</h2>
+          <p className="font-light font-sans">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et
+            similique quas ipsa odit omnis quam possimus, voluptates aliquam,
+            placeat pariatur, quos dolore. Numquam eum sit asperiores pariatur
+            dolores accusantium totam?
+          </p>
+        </div>
+        <div className={styles.container}>
+          <h2 className="text-2xl font-medium mb-2">Additional information</h2>
           <p className="font-light font-sans">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Et
             similique quas ipsa odit omnis quam possimus, voluptates aliquam,

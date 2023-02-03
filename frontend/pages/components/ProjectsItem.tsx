@@ -1,6 +1,9 @@
+import Link from "next/link";
+
 interface IProjectItem {
   name: string;
   description: string;
+  link: string;
 }
 
 const projects = [
@@ -24,11 +27,15 @@ const projects = [
   },
 ];
 
-const ProjectItem = ({ name, description }: IProjectItem) => {
+const ProjectItem = ({ name, description, link }: IProjectItem) => {
   return (
     <>
       <div className="px-10 lg:px-16">
-        <h2 className="text-4xl font-bold mb-6">{name}</h2>
+        <Link href={link}>
+          <h2 className="text-4xl font-bold mb-6 hover:underline underline-offset-8 decoration-hover">
+            {name}
+          </h2>
+        </Link>
         <p className="font-sans">{description}</p>
       </div>
     </>

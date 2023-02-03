@@ -11,7 +11,7 @@ const icons = [
   {
     id: 1,
     image: <BsGithub className="w-5 h-5 lg:w-8 lg:h-8" />,
-    link: "test",
+    link: "https://github.com/WildCodeSchool/2022-09-JS-RemoteEN-Project-2-Team-3",
   },
   {
     id: 2,
@@ -26,12 +26,12 @@ const icons = [
   {
     id: 4,
     image: <BsGoogle className="w-5 h-5 lg:w-8 lg:h-8" />,
-    link: "test",
+    link: "20uva02@gmail.com",
   },
   {
     id: 5,
     image: <BsLinkedin className="w-5 h-5 lg:w-8 lg:h-8" />,
-    link: "test",
+    link: "https://www.linkedin.com/in/vitalii-yurchenko-2299211ab/",
   },
 ];
 const Socials = () => {
@@ -40,7 +40,7 @@ const Socials = () => {
       <ul className="list-none flex items-center my-5">
         {icons.map((icon) => (
           <li className="mx-5 py-5 first:ml-3 lg:first:ml-0" key={icon.id}>
-            <Link href={`/${icon.link}`}>{icon.image}</Link>
+            <Link href={`${icon.link}`}>{icon.image}</Link>
           </li>
         ))}
       </ul>
