@@ -11,7 +11,7 @@ const BurgerMenu = () => {
 
   return (
     <div className={menu ? "" : "w-full flex justify-end"}>
-      <div className={menu ? "" : "absolute mx-2 my-2"}>
+      <div className={menu ? "" : "fixed mx-2 my-2"}>
         {menu ? (
           ""
         ) : (

@@ -11,3 +11,14 @@ CREATE TABLE
         email varchar(255) NOT NULL,
         message varchar(255) NOT NULL
     ) DEFAULT CHARSET = utf8mb3;
+
+DROP TABLE IF EXISTS reviews;
+
+CREATE TABLE
+    reviews (
+        id int primary key NOT NULL AUTO_INCREMENT,
+        name varchar(255) NOT NULL,
+        message varchar(255) NOT NULL
+    ) DEFAULT CHARSET = utf8mb3;
+
+ALTER TABLE reviews ADD time DATETIME NOT NULL DEFAULT GETDATE();

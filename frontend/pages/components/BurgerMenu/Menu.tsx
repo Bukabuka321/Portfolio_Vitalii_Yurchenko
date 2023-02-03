@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Link from "next/link";
 import { AiFillCloseCircle } from "react-icons/ai";
 
 export default function Menu({ menu, setMenu }: any) {
@@ -11,37 +11,48 @@ export default function Menu({ menu, setMenu }: any) {
       {!menu ? (
         ""
       ) : (
-        <div className="bg-[#010012] absolute flex flex-col justify-center items-center w-full">
+        <div className="bg-[#010012] fixed flex flex-col justify-center items-center w-full">
           <div className="w-full flex flex-col items-end">
             <button onClick={handleOnClick} className="text-white mx-3 my-3">
               <AiFillCloseCircle className=" w-7 h-7" />
             </button>
           </div>
           <div className=" flex flex-col items-start text-white text-xl  gap-5 mb-5">
-            <a
+            <Link
+              onClick={handleOnClick}
               className="hover:underline underline-offset-8 decoration-hover"
-              href=""
+              href={"/"}
             >
               Home
-            </a>
+            </Link>
             <a
+              onClick={handleOnClick}
               className="hover:underline underline-offset-8 decoration-hover"
-              href=""
+              href="#about"
             >
               About
             </a>
             <a
+              onClick={handleOnClick}
               className="hover:underline underline-offset-8 decoration-hover"
-              href=""
+              href="#projects"
             >
               Projects
             </a>
-            <a
+            <Link
+              onClick={handleOnClick}
               className="hover:underline underline-offset-8 decoration-hover"
-              href=""
+              href={"/contact"}
             >
               Contact
-            </a>
+            </Link>
+            <Link
+              onClick={handleOnClick}
+              className="hover:underline underline-offset-8 decoration-hover"
+              href={"/reviews"}
+            >
+              Reviews
+            </Link>
           </div>
         </div>
       )}

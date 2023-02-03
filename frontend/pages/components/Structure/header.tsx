@@ -15,26 +15,26 @@ const Header = () => {
           <li className="hover:underline underline-offset-8 decoration-hover">
             <Link
               className="hover:underline underline-offset-8 decoration-hover"
-              href={"/test"}
+              href={"/"}
             >
               Home
             </Link>
           </li>
           <li>
-            <Link
+            <a
               className="hover:underline underline-offset-8 decoration-hover"
-              href={"/test"}
+              href={"#about"}
             >
               About
-            </Link>
+            </a>
           </li>
           <li>
-            <Link
+            <a
               className="hover:underline underline-offset-8 decoration-hover"
-              href={"/test"}
+              href={"#projects"}
             >
               Projects
-            </Link>
+            </a>
           </li>
           <li>
             <Link
@@ -42,6 +42,14 @@ const Header = () => {
               href={"/contact"}
             >
               Contact
+            </Link>
+          </li>
+          <li>
+            <Link
+              className="hover:underline underline-offset-8 decoration-hover"
+              href={"/reviews"}
+            >
+              Reviews
             </Link>
           </li>
         </ul>

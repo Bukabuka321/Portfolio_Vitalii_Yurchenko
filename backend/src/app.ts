@@ -1,7 +1,12 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import { getAllMessages, postMessage } from "./messageHandlers";
+import {
+  getAllMessages,
+  getAllReviews,
+  postMessage,
+  postReview,
+} from "./messageHandlers";
 
 dotenv.config();
 
@@ -14,6 +19,8 @@ app.use(cors());
 
 app.post("/api/messages", postMessage);
 app.get("/api/messages", getAllMessages);
+app.post("/api/reviews", postReview);
+app.get("/api/reviews", getAllReviews);
 
 app.get("/", (req, res) => {
   res.send("Hello from Express!");
