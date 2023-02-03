@@ -1,7 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import axios from "axios";
 import styles from "../../styles/Border.module.css";
+import Link from "next/link";
 
 const Contact = () => {
   const [firstname, setFirstname] = useState<string>();
@@ -10,6 +12,8 @@ const Contact = () => {
   const [email, setEmail] = useState<string>();
   const [message, setMessage] = useState<string>();
   const [submitted, setSubmitted] = useState(false);
+
+  const router = useRouter();
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
@@ -24,13 +28,23 @@ const Contact = () => {
       .then((response) => response.data)
       .then(() => {
         setSubmitted(true);
+        setTimeout(() => {
+          router.push(`/`);
+        }, 3000);
       });
   };
+
   if (submitted) {
     return (
-      <div className="h-screen w-sreen flex flex-col justify-center items-center">
-        <div className="text-6xl mb-8">Thank you!</div>
+      <div className="h-screen w-sreen flex flex-col justify-center items-center gap-y-5">
+        <div className="text-6xl">Thank you!</div>
         <div className="text-3xl">We'll be in touch soon.</div>
+        <div className="text-2xl">
+          You will be redirect to main page in 3 seconds
+        </div>
+        <button className="text-2xl w-3/6 py-5 bg-[#0083FF] rounded-xl">
+          <Link href={"/"}>To main page</Link>
+        </button>
       </div>
     );
   }
@@ -110,7 +124,7 @@ const Contact = () => {
               onChange={(e) => setMessage(e.target.value)}
             />
           </div>
-          <div className="w-5/6 lg:w-1/6 mb-3 pt-0 self-center">
+          <div className="w-5/6 lg:w-2/6 mb-10 pt-0 self-center">
             <button
               className="text-xl w-full py-5 bg-[#0083FF] rounded-xl"
               type="submit"
