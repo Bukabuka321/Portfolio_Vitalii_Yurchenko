@@ -25,9 +25,7 @@ const Projects = () => {
           </li>
           <li className="w-full lg:w-3/6">
             <ProjectItem
-              link={
-                "https://github.com/WildCodeSchool/2022-09-JS-RemoteEN-Project-2-Team-3"
-              }
+              link={"https://theweather.wcs-student-projects.d-a-pfeiffer.info"}
               name={"The Weather App"}
               description={
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Etsimilique quas ipsa odit omnis quam possimus, voluptates aliquam,placeat pariatur, quos dolore. Numquam eum sit asperiores pariatur dolores accusantium totam?"
