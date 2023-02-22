@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import useSWR from "swr";
 import { FaUserCircle } from "react-icons/fa";
 import styles from "../../styles/Loader.module.css";
+import { useRouter } from "next/router";
 
 interface IReviews {
   id: number;
@@ -11,6 +11,7 @@ interface IReviews {
 }
 
 const Reviews = ({ reviews }: { reviews: IReviews[] }) => {
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
@@ -23,23 +24,22 @@ const Reviews = ({ reviews }: { reviews: IReviews[] }) => {
   const [message, setMessage] = useState<string>();
 
   const handleSubmit = (e: any) => {
-    // e.preventDefault();
+    //prevent hard refreshoing
+    e.preventDefault();
+    //fetching the data
     axios
       .post("http://localhost:5050/api/reviews", {
         name,
         message,
       })
       .then((response) => response.data);
+    //use this function to replace url of the page with the same url and update data without hard refresh
+    router.replace(router.asPath);
+    //clear input after submit
+    setMessage("");
+    setName("");
   };
 
-  // Declared url link of reviews
-  const reviewsUrl: string = `http://localhost:5050/api/reviews`;
-
-  // Created a fetcher function for useSWR
-  const fetcher = () => fetch(reviewsUrl).then((res) => res.json());
-
-  // Used hook useSWR with interface of IREviews and paramater: url and fecther function
-  const { data } = useSWR<IReviews[]>(reviewsUrl, fetcher);
   return (
     <>
       {loading ? (
@@ -83,7 +83,7 @@ const Reviews = ({ reviews }: { reviews: IReviews[] }) => {
             <div className="lg:flex lg:flex-col lg:items-start lg:w-full lg:pl-11">
               <h2 className="text-3xl mb-6">Reviews:</h2>
               <ul className="flex flex-col gap-y-4 lg:gap-y-8">
-                {data?.map((review: IReviews) => (
+                {reviews?.map((review: IReviews) => (
                   <li
                     className="flex items-start lg:items-start gap-x-3 lg:gap-x-6"
                     key={review.id}
@@ -106,12 +106,14 @@ const Reviews = ({ reviews }: { reviews: IReviews[] }) => {
   );
 };
 
-// export async function getServerSideProps(): Promise<{ props: { reviews: any; }; }> {
-//   // Fetch data from  API
-//   const res = await fetch(`http://localhost:5050/api/reviews`);
-//   const data = await res.json();
-//   // Pass data to the page via props
-//   return { props: { reviews: data } };
-// }
+export async function getServerSideProps(): Promise<{
+  props: { reviews: any };
+}> {
+  // Fetch data from  API
+  const res = await fetch(`http://localhost:5050/api/reviews`);
+  const data = await res.json();
+  // Pass data to the page via props
+  return { props: { reviews: data.reverse() } };
+}
 
 export default Reviews;
