@@ -39,7 +39,10 @@ const Socials = () => {
     <div className="">
       <ul className="list-none flex items-center my-5">
         {icons.map((icon) => (
-          <li className="mx-5 py-5 first:ml-3 lg:first:ml-0" key={icon.id}>
+          <li
+            className="mx-5 py-5 first:ml-0 md:first:ml-5 lg:first:ml-0"
+            key={icon.id}
+          >
             <Link href={`${icon.link}`}>{icon.image}</Link>
           </li>
         ))}
