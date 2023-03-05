@@ -113,6 +113,7 @@ export async function getServerSideProps(): Promise<{
   const res = await fetch(`http://localhost:5050/api/reviews`);
   const data = await res.json();
   // Pass data to the page via props
+  //reverse the array of data
   return { props: { reviews: data.reverse() } };
 }
 
