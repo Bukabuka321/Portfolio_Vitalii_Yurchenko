@@ -95,3 +95,17 @@ export const getUsers = (req: Request, res: Response) => {
       res.status(500).send("Error retrieving data from database");
     });
 };
+
+export const getUsersByEmail = (req: Request, res: Response) => {
+  const email = req.query.email;
+  database
+    .query("SELECT * FROM users WHERE email = ?", email)
+    .then((result) => {
+      const users = result[0];
+      res.json(users);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Error retrieving data from database");
+    });
+};

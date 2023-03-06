@@ -1,40 +1,26 @@
-import { useState } from "react";
 import axios from "axios";
+import { useState } from "react";
 
-const Login = () => {
-  const [firstname, setFirstname] = useState("");
-  const [lastname, setLastname] = useState("");
+const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [firstname, setFirstname] = useState("");
 
   const handleSubmit = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
-    axios
-      .post("http://localhost:5050/api/users", {
-        firstname,
-        lastname,
+    await axios
+      .post("http://localhost:5050/api/login", {
         email,
         password,
       })
-      .then((response) => response.data);
+      .then((response) => {
+        const data = response.data;
+        setFirstname(`${data.user.firstname}`);
+      });
   };
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          required
-          placeholder="Firstname"
-          value={firstname}
-          onChange={(event) => setFirstname(event.target.value)}
-        />
-        <input
-          type="text"
-          required
-          placeholder="Lastname "
-          value={lastname}
-          onChange={(event) => setLastname(event.target.value)}
-        />
         <input
           type="email"
           required
@@ -51,8 +37,11 @@ const Login = () => {
         />
         <button type="submit">Log In</button>
       </form>
+      <div>
+        <h1>Hello, {firstname}</h1>
+      </div>
     </>
   );
 };
 
-export default Login;
+export default SignUp;

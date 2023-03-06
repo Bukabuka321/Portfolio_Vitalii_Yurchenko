@@ -21,6 +21,7 @@ import {
   putUser,
   validateUser,
   getUsers,
+  getUsersByEmail,
 } from "./userHandlers";
 
 dotenv.config();
@@ -39,8 +40,8 @@ app.get("/api/reviews", getAllReviews);
 
 app.post("/api/login", getUserByEmailWithpassowrdAndPassToNext, verifyPassword);
 app.post("/api/users", hashPassword, postUser);
-// app.get("/api/users/:id", getUsersById);
 app.get("/api/users", getUsers);
+app.get("/api/user", getUsersByEmail);
 
 app.use(verifyToken);
 
