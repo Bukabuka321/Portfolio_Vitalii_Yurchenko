@@ -10,7 +10,7 @@ const Header = () => {
       <div className="visible lg:invisible">
         <BurgerMenu />
       </div>
-      <div className="invisible sm:visible flex justify-center">
+      <div className="invisible lg:visible flex justify-center">
         <ul className="w-2/5 flex justify-around py-5">
           <li className="hover:underline underline-offset-8 decoration-hover">
             <Link

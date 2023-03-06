@@ -20,5 +20,8 @@
   "license": "MIT",
   "devDependencies": {
     "concurrently": "^7.6.0"
+  },
+  "dependencies": {
+    "joi": "^17.8.3"
   }
 }

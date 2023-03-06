@@ -12,9 +12,19 @@ const Landing = () => {
           <br /> I'm Vitalii,
           <br /> Full Stack Web Developer
         </h1>
-        <button className="px-20 lg:px-24 py-3 border border-white rounded-xl sm:mx-5 lg:mx-0">
+        <button className="px-20 mb-4 lg:px-28 py-3 border border-white rounded-xl sm:mx-5 lg:mx-0">
           <Link href={"/contact"} className="font-light text-3xl">
             Contact me!
+          </Link>
+        </button>
+
+        <button className="px-12 lg:px-20 py-3 border border-white rounded-xl sm:mx-5 lg:mx-0">
+          <Link
+            href="/CV_VITALII_YURCHENKO_DE.pdf"
+            className="font-light text-3xl"
+            locale={false}
+          >
+            Download resume!
           </Link>
         </button>
         <Socials />
